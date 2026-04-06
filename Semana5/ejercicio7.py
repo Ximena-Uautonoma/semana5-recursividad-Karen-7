@@ -11,14 +11,17 @@ Debe implementar:
 """
 
 def ahorro_total_ciclo(ahorros):
-    """
-    Retorna el ahorro total usando iteración.
-    """
-    pass
+    total = 0
+    for ahorro in ahorros:
+        total += ahorro
+    return total
 
 
 def ahorro_total_recursivo(ahorros):
-    """
-    Retorna el ahorro total usando recursividad.
-    """
-    pass
+    if len(ahorros)==0:
+        return 0
+    return ahorros[0] + ahorro_total_recursivo(ahorros[1:])
+
+ahorros =[10000, 20000, 30000, 40000]
+print(ahorro_total_ciclo(ahorros))
+print(ahorro_total_recursivo(ahorros))

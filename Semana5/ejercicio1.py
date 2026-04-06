@@ -7,15 +7,16 @@ Debe implementar dos funciones:
 """
 
 def contar_ciclo(n):
-    """
-    Retorna una lista con los números desde 1 hasta n usando iteración.
-    """
-#prueba
+    lista = []
+    for i in range (1, n+1):
+        lista.append(i)
+    return lista
 
 
 def contar_recursivo(n):
-    """
-    Retorna una lista con los números desde 1 hasta n usando recursividad.
-    """
-    # Escriba aquí su solución y borre la palabra pass de acontinuación
-    pass
+    if n ==1:
+        return[1]
+    return contar_recursivo (n-1)+[n]
+
+print(contar_ciclo(5))
+print(contar_recursivo(5))
